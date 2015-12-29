@@ -45,7 +45,6 @@
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString * cellone = @"cell";
-    
     MainTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellone];
     if (cell == nil) {
         cell = [[MainTableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellone];
@@ -60,7 +59,10 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.nameArray.count;
 }
+<<<<<<< HEAD
+=======
 
+>>>>>>> ddf4461bf84d321964a8a9fc239c8ec8711435dc
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     
       if ( [[UIApplication sharedApplication]openURL:[NSURL URLWithString:self.urlArray[indexPath.row]]]) {
@@ -70,6 +72,13 @@
 //        NSLog(@"jkdfgh");
 //    }
 }
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+
+>>>>>>> ddf4461bf84d321964a8a9fc239c8ec8711435dc
+>>>>>>> c0741bdc549a2c3a7dc784c7191b86f3989a8638
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

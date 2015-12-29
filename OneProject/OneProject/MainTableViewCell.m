@@ -41,11 +41,6 @@
     
     self.imageV = [[UIImageView alloc]initWithFrame:CGRectMake(5,0, 66, 66)];
     
-//    self.imageV.layer.cornerRadius=33;
-//    
-//    self.imageV.clipsToBounds=YES;
-    
-    
     [self addSubview:self.imageV];
     
     self.timeLable = [[UILabel alloc] initWithFrame:CGRectMake(86, 44, kWidth-80, 22)];
