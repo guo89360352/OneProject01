@@ -8,11 +8,10 @@
 
 #import "OneViewController.h"
 #import "Model.h"
+#import "MainTableViewCell.h"
 @interface OneViewController ()
 @property(nonatomic,retain) UITableView *tableView;
 @property(nonatomic,retain) NSMutableArray *nameArray;
-@property(nonatomic,retain) NSArray *array;
-@property(nonatomic,retain) NSDictionary *dit;
 @end
 
 @implementation OneViewController
@@ -24,8 +23,6 @@
    
     
     self.tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
-    self.tableView.backgroundColor = [UIColor magentaColor];
-    self.tableView.rowHeight  = 80;
     self.tableView.separatorColor = [UIColor blackColor];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
@@ -41,36 +38,43 @@
     NSDictionary *dic = [NSDictionary dictionaryWithContentsOfFile:path];
     NSDictionary *dit = dic[@"root"];
     NSArray *array = dit[@"list"];
+    self.nameArray = [NSMutableArray new];
+    for (NSDictionary *dic1 in array) {
+        Model *modal = [[Model alloc] initWithDictionary:dic1];
+        [self.nameArray addObject:modal];
+        NSLog(@"%@",self.nameArray);
+    }
     
-    
-    
-    
-    
-    
-        }
-    
-    
-    
-
-
-
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 10;
 }
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 1;
-}
+    
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     static NSString * cellone = @"cell";
     
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellone];
+    MainTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellone];
     if (cell == nil) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellone];
+        cell = [[MainTableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellone];
     }
-    cell.backgroundColor = [UIColor cyanColor];
+   
+    Model *model = self.nameArray[indexPath.row];
+    cell.model = model;
     return cell;
 }
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.nameArray.count;
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    Model *model = self.nameArray[indexPath.row];
+    CGFloat cellHeight = [MainTableViewCell getCellHeightWithModel:model];
+    return cellHeight;
+    
+    
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
