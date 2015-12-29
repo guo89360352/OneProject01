@@ -9,6 +9,8 @@
 #import "OneViewController.h"
 
 @interface OneViewController ()
+@property(nonatomic,retain) UITableView *tableView;
+@property(nonatomic,retain) NSMutableArray *nameArray;
 
 @end
 
@@ -17,6 +19,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {

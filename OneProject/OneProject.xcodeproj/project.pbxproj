@@ -10,6 +10,7 @@
 		7A0F45871C3242710070DB1C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A0F45841C3242710070DB1C /* ViewController.m */; };
 		7A0F45881C3242710070DB1C /* NetWorkEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A0F45861C3242710070DB1C /* NetWorkEngine.m */; };
 		7A0F45931C3259D20070DB1C /* Property List.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A0F45921C3259D20070DB1C /* Property List.plist */; };
+		7A0F45961C325CF20070DB1C /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A0F45951C325CF20070DB1C /* Model.m */; };
 		7A8C16281C323D6F0010A8AC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8C16271C323D6F0010A8AC /* main.m */; };
 		7A8C162B1C323D6F0010A8AC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8C162A1C323D6F0010A8AC /* AppDelegate.m */; };
 		7A8C162D1C323D6F0010A8AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A8C162C1C323D6F0010A8AC /* Assets.xcassets */; };
@@ -30,6 +31,8 @@
 		7A0F45851C3242710070DB1C /* NetWorkEngine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetWorkEngine.h; sourceTree = "<group>"; };
 		7A0F45861C3242710070DB1C /* NetWorkEngine.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetWorkEngine.m; sourceTree = "<group>"; };
 		7A0F45921C3259D20070DB1C /* Property List.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Property List.plist"; sourceTree = "<group>"; };
+		7A0F45941C325CF20070DB1C /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
+		7A0F45951C325CF20070DB1C /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
 		7A8C16231C323D6F0010A8AC /* OneProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A8C16271C323D6F0010A8AC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7A8C16291C323D6F0010A8AC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -99,6 +102,8 @@
 				7A0F45841C3242710070DB1C /* ViewController.m */,
 				7A0F45851C3242710070DB1C /* NetWorkEngine.h */,
 				7A0F45861C3242710070DB1C /* NetWorkEngine.m */,
+				7A0F45941C325CF20070DB1C /* Model.h */,
+				7A0F45951C325CF20070DB1C /* Model.m */,
 				7A0F45921C3259D20070DB1C /* Property List.plist */,
 				7A8C162C1C323D6F0010A8AC /* Assets.xcassets */,
 				7A8C162E1C323D6F0010A8AC /* LaunchScreen.storyboard */,
@@ -193,6 +198,7 @@
 				7A0F45871C3242710070DB1C /* ViewController.m in Sources */,
 				7A8C16421C323DA30010A8AC /* FourViewController.m in Sources */,
 				7A0F45881C3242710070DB1C /* NetWorkEngine.m in Sources */,
+				7A0F45961C325CF20070DB1C /* Model.m in Sources */,
 				7A8C16391C323D8A0010A8AC /* OneViewController.m in Sources */,
 				7A8C162B1C323D6F0010A8AC /* AppDelegate.m in Sources */,
 				7A8C16281C323D6F0010A8AC /* main.m in Sources */,
