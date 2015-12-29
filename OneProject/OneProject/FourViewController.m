@@ -21,7 +21,7 @@
     // Do any additional setup after loading the view.
     self.tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
     self.tableView.separatorColor = [UIColor brownColor];
-    self.tableView.backgroundColor = [UIColor yellowColor];
+    self.tableView.backgroundColor = [UIColor cyanColor];
     self.tableView.rowHeight = 80;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
@@ -35,11 +35,11 @@
 - (void)configTableData{
     NSString *path = [[NSBundle mainBundle] pathForResource:@"Property List" ofType:@".plist"];
     NSDictionary *dic = [NSDictionary dictionaryWithContentsOfFile:path];
-    NSDictionary *dic1 = dic[@"root"];
-    NSArray *array = dic1[@"list"];
+    NSDictionary *di = dic[@"root"];
+    NSArray *array = di[@"list"];
     self.titleArray = [NSMutableArray new];
-    for (NSDictionary *dica in array) {
-        Model *model = [[Model alloc]initWithDictionary:dica];
+    for (NSDictionary *dic in array) {
+        Model *model = [[Model alloc]initWithDictionary:dic];
     [self.titleArray addObject:model];
     }
 }
@@ -52,6 +52,7 @@
     if (cell == nil) {
         cell = [[MainTableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:identifier];
     }
+    cell.backgroundColor = [UIColor clearColor];
     cell.model = self.titleArray[indexPath.row];
     return cell;
 }

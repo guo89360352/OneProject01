@@ -23,7 +23,7 @@
     // Do any additional setup after loading the view.
     self.tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
     self.tableView.separatorColor = [UIColor blackColor];
-    self.tableView.backgroundColor = [UIColor purpleColor];
+    self.tableView.backgroundColor = [UIColor yellowColor];
     self.tableView.rowHeight = 80;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;

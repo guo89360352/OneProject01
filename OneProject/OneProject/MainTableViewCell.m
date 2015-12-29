@@ -60,53 +60,15 @@
 -(void)setModel:(Model *)model{
     NSLog(@"%@",model.imglink);
     self.titleLable.text = model.title;
-//    self.imageV.image = [UIImage imageNamed:model.imglink];
     self.timeLable.text = model.date;
-//    CGFloat height = [[self class] getTextHeightWithText:model.title];
-//    CGRect frame = self.titleLable.frame;
-//    frame.size.height = height;
-//    self.titleLable.frame = frame;
-//    self.titleLable.font = [UIFont systemFontOfSize:15.0];
-    
-    
-    
-    
-    
+    self.timeLable.textColor = [UIColor lightGrayColor];
     NSURL *url=[NSURL URLWithString:model.imglink];
     
     UIImage *image=[UIImage imageNamed:@"zhang"];
     
-    
     [self.imageV sd_setImageWithURL:url placeholderImage:image];
     
-
-
-    
-
-
-
-
-
 }
-//+(CGFloat)getTextHeightWithText:(NSString *)str{
-//    //计算文本高度的核心方法！！
-//    //boundingRectWithSize当获取指定文字高度的时候需要一个CGSize类型的参数，需要让文字在这个限定的宽度和高度区域内显示通常宽度和你要显示的Label的宽度保持一致，高度尽可能的设置高一点
-//    //options是文字显示的方式
-//    //attributes设置文字相关的属性
-//    //context是文本绘制的上下文，一般不直接设置，直接写nil
-//    CGRect textRect = [str boundingRectWithSize:CGSizeMake(kWidth*0.75, 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:15.0]} context:nil];
-//    return textRect.size.height;
-//    
-//}
-////获取整个cell的高度，车名label高度+品牌介绍label高度
-//+(CGFloat)getCellHeightWithModel:(Model *)model{
-//    
-//    CGFloat textHeight = [[self class] getTextHeightWithText:model.title];
-//    
-//    return textHeight + kWidth/4/4+15;
-//    
-//}
-
 
 - (void)awakeFromNib {
     // Initialization code
