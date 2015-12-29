@@ -7,6 +7,7 @@
 //
 
 #import "TwoTableViewCell.h"
+#import <UIImageView+WebCache.h>
 #define kWidth [UIScreen mainScreen].bounds.size.width
 @interface TwoTableViewCell ()
 
@@ -28,7 +29,7 @@
 
 -(void)configLoadingView{
     self.titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(80, 5, [UIScreen mainScreen].bounds.size.width - 80, 30)];
-    self.ImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 85, 85)];
+    self.ImageView = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 70, 70)];
     self.timeLabel = [[UILabel alloc]initWithFrame:CGRectMake(80, 60, [UIScreen mainScreen].bounds.size.width - 100, 30)];
     [self.contentView addSubview:self.titleLabel];
     [self.contentView addSubview:self.ImageView];
@@ -44,25 +45,13 @@
     self.ImageView.image = [UIImage imageNamed:model.imglink];
     self.timeLabel.text = model.date;
     self.timeLabel.font = [UIFont systemFontOfSize:14.0];
-    CGFloat height = [[self class] getTextHeightWithText:model.title];
-    CGRect frame = self.titleLabel.frame;
-    frame.size.height = height;
-    self.titleLabel.frame = frame;
     self.titleLabel.font = [UIFont systemFontOfSize:20.0];
+    self.timeLabel.textColor = [UIColor lightGrayColor];
+    NSURL *url=[NSURL URLWithString:model.imglink];
     
+    UIImage *image=[UIImage imageNamed:@"zhang"];
     
-}
-
-+(CGFloat)getTextHeightWithText:(NSString *)str{
-    CGRect textRect = [str boundingRectWithSize:CGSizeMake(kWidth * 0.75, 1000) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName:[UIFont systemFontOfSize:15.0]} context:nil];
-    return textRect.size.height;
-    
-}
-+(CGFloat)getCellHeightWithModel:(Model *)model{
-    
-    CGFloat textHeight = [[self class] getTextHeightWithText:model.title];
-    
-    return textHeight + kWidth / 4 / 4 + 15;
+    [self.ImageView sd_setImageWithURL:url placeholderImage:image];
     
 }
 

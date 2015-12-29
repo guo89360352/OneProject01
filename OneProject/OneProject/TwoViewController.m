@@ -13,6 +13,7 @@
 
 @property (nonatomic, retain) UITableView *tableView;
 @property (nonatomic, retain) NSMutableArray *allArray;
+@property (nonatomic, retain) NSMutableArray *urlArray;
 
 @end
 
@@ -37,9 +38,11 @@
     NSDictionary *dic1 = dic[@"root"];
     NSArray *array = dic1[@"list"];
     self.allArray = [NSMutableArray new];
-    for (NSDictionary *dic2 in array) {
-        Model *model = [[Model alloc] initWithDictionary:dic2];
-        [self.allArray addObject:model];
+    self.urlArray = [NSMutableArray new];
+    for (NSDictionary *dic1 in array) {
+        Model *modal = [[Model alloc] initWithDictionary:dic1];
+        [self.urlArray addObject:dic1[@"url"]];
+        [self.allArray addObject:modal];
     }
 }
 
@@ -58,8 +61,11 @@
     cell.model = model;
     return cell;
 }
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
-    return 4;
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    if ( [[UIApplication sharedApplication]openURL:[NSURL URLWithString:self.urlArray[indexPath.row]]]) {
+        [[UIApplication sharedApplication]openURL:[NSURL URLWithString:self.urlArray[indexPath.row]]];
+    }
 }
 
 - (void)didReceiveMemoryWarning {
