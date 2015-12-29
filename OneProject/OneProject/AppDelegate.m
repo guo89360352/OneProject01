@@ -7,7 +7,10 @@
 //
 
 #import "AppDelegate.h"
-
+#import "OneViewController.h"
+#import "TwoViewController.h"
+#import "ThreeViewController.h"
+#import "FourViewController.h"
 @interface AppDelegate ()
 
 @end
@@ -16,10 +19,41 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    self.window = [[UIWindow alloc]initWithFrame:[[UIScreen mainScreen] bounds]];
+    UITabBarController *tabBarVC = [[UITabBarController alloc]init];
+    OneViewController *oneVC = [[OneViewController alloc]init];
+    UINavigationController *oneNav = [[UINavigationController alloc]initWithRootViewController:oneVC];
+    oneVC.navigationItem.title = @"one";
+    oneVC.tabBarItem.title = @"One";
+    
+    TwoViewController *twoVC = [[TwoViewController alloc]init];
+    UINavigationController *twoNav = [[UINavigationController alloc]initWithRootViewController:twoVC];
+    twoVC.navigationItem.title = @"two";
+    twoVC.tabBarItem.title = @"Two";
+    
+    ThreeViewController *threeVC = [[ThreeViewController alloc]init];
+    UINavigationController *threeNav = [[UINavigationController alloc]initWithRootViewController:threeVC];
+    threeVC.navigationItem.title = @"three";
+    threeVC.tabBarItem.title = @"Three";
+    
+    
+    FourViewController *fourVC = [[FourViewController alloc]init];
+    UINavigationController *fourNav = [[UINavigationController alloc]initWithRootViewController:fourVC];
+    fourVC.navigationItem.title = @"four";
+    fourVC.tabBarItem.title = @"Four";
+    
+    
+    
+    tabBarVC.viewControllers = @[oneNav,twoNav,threeNav,fourNav];
+    tabBarVC.delegate = self;
+    tabBarVC.tabBar.tintColor = [UIColor orangeColor];
+    tabBarVC.tabBar.barTintColor = [UIColor cyanColor];
+    
+    self.window.rootViewController = tabBarVC;
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
