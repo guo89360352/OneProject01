@@ -1,5 +1,5 @@
 //
-//  TwoViewController.h
+//  TwoTableViewCell.h
 //  OneProject
 //
 //  Created by scjy on 15/12/29.
@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Model.h"
+@interface TwoTableViewCell : UITableViewCell
 
-@interface TwoViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@property (nonatomic, retain) Model *model;
 
 @end
