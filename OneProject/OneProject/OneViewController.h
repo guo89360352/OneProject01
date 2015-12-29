@@ -9,5 +9,6 @@
 #import <UIKit/UIKit.h>
 
 @interface OneViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@property(nonatomic, copy) NSString *string;
 
 @end

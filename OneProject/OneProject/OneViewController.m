@@ -12,16 +12,20 @@
 @interface OneViewController ()
 @property(nonatomic,retain) UITableView *tableView;
 @property(nonatomic,retain) NSMutableArray *nameArray;
+@property(nonatomic,retain) NSMutableArray *urlArray;
+
 @end
 @implementation OneViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    self.view.backgroundColor = [UIColor greenColor];
     self.tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
     self.tableView.separatorColor = [UIColor blackColor];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    self.tableView.rowHeight = 80;
     [self.view addSubview:self.tableView];
     [self path];
 }
@@ -31,8 +35,10 @@
     NSDictionary *dit = dic[@"root"];
     NSArray *array = dit[@"list"];
     self.nameArray = [NSMutableArray new];
+    self.urlArray = [NSMutableArray new];
     for (NSDictionary *dic1 in array) {
         Model *modal = [[Model alloc] initWithDictionary:dic1];
+        [self.urlArray addObject:dic1[@"url"]];
         [self.nameArray addObject:modal];
     }
 }
@@ -43,9 +49,7 @@
     if (cell == nil) {
         cell = [[MainTableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellone];
     }
-    Model *model = self.nameArray[indexPath.row];
-    cell.textLabel.text  = model.title;
-    cell.detailTextLabel.text = model.date;
+    cell.model = self.nameArray[indexPath.row];
     return cell;
 }
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
@@ -54,14 +58,10 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.nameArray.count;
 }
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    Model *model = self.nameArray[indexPath.row];
-    CGFloat cellHeight = [MainTableViewCell getCellHeightWithModel:model];
-    return cellHeight;
-}
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if ([[UIApplication sharedApplication]openURL:[NSURL URLWithString:@"http://api.milltary.app887.com/article.html?id=133835269"]]) {
-        [[UIApplication sharedApplication]openURL:[NSURL URLWithString:@"http://api.milltary.app887.com/article.html?id=133835269"]];
+    
+      if ( [[UIApplication sharedApplication]openURL:[NSURL URLWithString:self.urlArray[indexPath.row]]]) {
+        [[UIApplication sharedApplication]openURL:[NSURL URLWithString:self.urlArray[indexPath.row]]];
     }
     else{
         NSLog(@"jkdfgh");
