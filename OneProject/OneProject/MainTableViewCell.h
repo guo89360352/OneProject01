@@ -11,5 +11,4 @@
 
 @interface MainTableViewCell : UITableViewCell
 @property(retain,nonatomic)Model *model;
-+(CGFloat)getCellHeightWithModel:(Model *)model;
 @end

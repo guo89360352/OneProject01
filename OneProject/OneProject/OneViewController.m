@@ -26,6 +26,7 @@
     self.tableView.separatorColor = [UIColor blackColor];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
+    self.tableView.rowHeight = 80;
     [self.view addSubview:self.tableView];
     
     [self path];
@@ -67,13 +68,6 @@
     return self.nameArray.count;
 }
 
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    Model *model = self.nameArray[indexPath.row];
-    CGFloat cellHeight = [MainTableViewCell getCellHeightWithModel:model];
-    return cellHeight;
-    
-    
-}
 
 
 - (void)didReceiveMemoryWarning {
