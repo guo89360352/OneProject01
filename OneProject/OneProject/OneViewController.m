@@ -9,6 +9,7 @@
 #import "OneViewController.h"
 #import "Model.h"
 #import "MainTableViewCell.h"
+#
 @interface OneViewController ()
 @property(nonatomic,retain) UITableView *tableView;
 @property(nonatomic,retain) NSMutableArray *nameArray;
@@ -20,9 +21,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    self.view.backgroundColor = [UIColor greenColor];
     self.tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
     self.tableView.separatorColor = [UIColor blackColor];
+    self.tableView.backgroundColor = [UIColor greenColor];
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     self.tableView.rowHeight = 80;
@@ -49,6 +50,7 @@
     if (cell == nil) {
         cell = [[MainTableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellone];
     }
+    cell.backgroundColor = [UIColor clearColor];
     cell.model = self.nameArray[indexPath.row];
     return cell;
 }
@@ -68,7 +70,6 @@
 //        NSLog(@"jkdfgh");
 //    }
 }
-                         
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

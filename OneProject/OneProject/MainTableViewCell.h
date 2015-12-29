@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "Model.h"
-
 @interface MainTableViewCell : UITableViewCell
 @property(retain,nonatomic)Model *model;
 @end
