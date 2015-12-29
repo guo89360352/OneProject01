@@ -55,16 +55,6 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     return self.nameArray.count;
 }
-<<<<<<< HEAD
-
-
-
-=======
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    Model *model = self.nameArray[indexPath.row];
-    CGFloat cellHeight = [MainTableViewCell getCellHeightWithModel:model];
-    return cellHeight;
-}
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if ([[UIApplication sharedApplication]openURL:[NSURL URLWithString:@"http://api.milltary.app887.com/article.html?id=133835269"]]) {
         [[UIApplication sharedApplication]openURL:[NSURL URLWithString:@"http://api.milltary.app887.com/article.html?id=133835269"]];
@@ -73,7 +63,7 @@
         NSLog(@"jkdfgh");
     }
 }
->>>>>>> 05e6117de6fe73e3bd90b35ab543500c9788f6b4
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

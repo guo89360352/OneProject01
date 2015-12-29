@@ -39,8 +39,7 @@
     threeVC.navigationItem.title = @"three";
     threeVC.tabBarItem.title = @"Three";
     threeVC.tabBarItem.image = [UIImage imageNamed:@"27-planet.png"];
-    
-    
+
     FourViewController *fourVC = [[FourViewController alloc]init];
     UINavigationController *fourNav = [[UINavigationController alloc]initWithRootViewController:fourVC];
     fourVC.navigationItem.title = @"four";
