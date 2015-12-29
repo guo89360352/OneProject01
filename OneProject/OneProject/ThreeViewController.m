@@ -22,8 +22,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.tableView = [[UITableView alloc] initWithFrame:self.view.frame style:UITableViewStylePlain];
-    self.tableView.backgroundColor = [UIColor orangeColor];
     self.tableView.separatorColor = [UIColor blackColor];
+    
+    self.tableView.rowHeight = 80;
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     
@@ -42,9 +43,6 @@
         Model *model = [[Model alloc] initWithDictionary:dic2];
         [self.allArray addObject:model];
     }
-
-
-
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
@@ -58,24 +56,9 @@
     if (cell==nil) {
         cell = [[MainTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdent];
     }
-    Model *model = self.allArray[indexPath.row];
-    cell.backgroundColor = [UIColor clearColor];
-    cell.model = model;
+    cell.model=self.allArray[indexPath.row];
     return cell;
 
-
-}
--(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    //取得对应行显示所得的model
-    
-    Model *mangomodel = self.allArray[indexPath.row];
-    //通过每一行cell显示model的数据来获取cell高度
-    CGFloat cellHeight = [MainTableViewCell getCellHeightWithModel:mangomodel];
-    //获取cell高度后返回给tableview
-    return cellHeight;
-    
-    
-    
 }
 
 - (void)didReceiveMemoryWarning {
