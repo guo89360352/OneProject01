@@ -12,6 +12,7 @@
 		7A0F45881C3242710070DB1C /* NetWorkEngine.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A0F45861C3242710070DB1C /* NetWorkEngine.m */; };
 		7A0F45931C3259D20070DB1C /* Property List.plist in Resources */ = {isa = PBXBuildFile; fileRef = 7A0F45921C3259D20070DB1C /* Property List.plist */; };
 		7A0F45961C325CF20070DB1C /* Model.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A0F45951C325CF20070DB1C /* Model.m */; };
+		7A533B991C32820E00C74C4A /* TwoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A533B981C32820E00C74C4A /* TwoTableViewCell.m */; };
 		7A8C16281C323D6F0010A8AC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8C16271C323D6F0010A8AC /* main.m */; };
 		7A8C162B1C323D6F0010A8AC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A8C162A1C323D6F0010A8AC /* AppDelegate.m */; };
 		7A8C162D1C323D6F0010A8AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A8C162C1C323D6F0010A8AC /* Assets.xcassets */; };
@@ -35,6 +36,8 @@
 		7A0F45921C3259D20070DB1C /* Property List.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Property List.plist"; sourceTree = "<group>"; };
 		7A0F45941C325CF20070DB1C /* Model.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Model.h; sourceTree = "<group>"; };
 		7A0F45951C325CF20070DB1C /* Model.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Model.m; sourceTree = "<group>"; };
+		7A533B971C32820E00C74C4A /* TwoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwoTableViewCell.h; sourceTree = "<group>"; };
+		7A533B981C32820E00C74C4A /* TwoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwoTableViewCell.m; sourceTree = "<group>"; };
 		7A8C16231C323D6F0010A8AC /* OneProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OneProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A8C16271C323D6F0010A8AC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7A8C16291C323D6F0010A8AC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -106,6 +109,8 @@
 				7A8C166D1C325EA90010A8AC /* MainTableViewCell.m */,
 				7A8C163A1C323D920010A8AC /* TwoViewController.h */,
 				7A8C163B1C323D920010A8AC /* TwoViewController.m */,
+				7A533B971C32820E00C74C4A /* TwoTableViewCell.h */,
+				7A533B981C32820E00C74C4A /* TwoTableViewCell.m */,
 				7A8C163D1C323D9A0010A8AC /* ThreeViewController.h */,
 				7A8C163E1C323D9A0010A8AC /* ThreeViewController.m */,
 				7A8C16401C323DA30010A8AC /* FourViewController.h */,
@@ -285,6 +290,7 @@
 				7A8C16281C323D6F0010A8AC /* main.m in Sources */,
 				7A8C163C1C323D930010A8AC /* TwoViewController.m in Sources */,
 				7A8C163F1C323D9A0010A8AC /* ThreeViewController.m in Sources */,
+				7A533B991C32820E00C74C4A /* TwoTableViewCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
