@@ -26,32 +26,34 @@
     UINavigationController *oneNav = [[UINavigationController alloc]initWithRootViewController:oneVC];
     oneVC.navigationItem.title = @"one";
     oneVC.tabBarItem.title = @"One";
+    oneVC.tabBarItem.image = [UIImage imageNamed:@"106-sliders.png"];
     
     TwoViewController *twoVC = [[TwoViewController alloc]init];
     UINavigationController *twoNav = [[UINavigationController alloc]initWithRootViewController:twoVC];
     twoVC.navigationItem.title = @"two";
     twoVC.tabBarItem.title = @"Two";
+    twoVC.tabBarItem.image = [UIImage imageNamed:@"14-tag.png"];
     
     ThreeViewController *threeVC = [[ThreeViewController alloc]init];
     UINavigationController *threeNav = [[UINavigationController alloc]initWithRootViewController:threeVC];
     threeVC.navigationItem.title = @"three";
     threeVC.tabBarItem.title = @"Three";
+    threeVC.tabBarItem.image = [UIImage imageNamed:@"27-planet.png"];
     
     
     FourViewController *fourVC = [[FourViewController alloc]init];
     UINavigationController *fourNav = [[UINavigationController alloc]initWithRootViewController:fourVC];
     fourVC.navigationItem.title = @"four";
     fourVC.tabBarItem.title = @"Four";
-    
-    
+    fourVC.tabBarItem.image = [UIImage imageNamed:@"108-badge.png"];
     
     tabBarVC.viewControllers = @[oneNav,twoNav,threeNav,fourNav];
     tabBarVC.delegate = self;
     tabBarVC.tabBar.tintColor = [UIColor orangeColor];
-    tabBarVC.tabBar.barTintColor = [UIColor cyanColor];
+    tabBarVC.tabBar.barTintColor = [UIColor whiteColor];
     
     self.window.rootViewController = tabBarVC;
-    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.backgroundColor = [UIColor cyanColor];
     [self.window makeKeyAndVisible];
     
     return YES;
